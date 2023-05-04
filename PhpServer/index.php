@@ -1,6 +1,6 @@
 <!--
     This project rewrite by https://github.com/wythh24
-    the purpose is clean code and configuration any missing parts
+    The purpose is clean code and configuration any missing parts
 
     Reference
     https://github.com/RuiSantosdotme
