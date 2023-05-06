@@ -6,7 +6,7 @@
 const char *ssid = "_";
 const char *password = "22221111";
 
-const char *server_name = "?action=outputs_state&board=2";
+const char *server_name = "https://fdnslaf.000webhostapp.com/esp-outputs-action.php?action=outputs_state&board=1";
 
 const long interval = 5000;
 unsigned long previousMillis = 0;
