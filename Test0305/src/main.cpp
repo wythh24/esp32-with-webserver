@@ -3,9 +3,11 @@
 #include <WiFiClientSecure.h>
 #include <Arduino_JSON.h>
 
-const char *ssid = "_";
-const char *password = "22221111";
+const char *ssid = "ssid_or_wifi_name";
+const char *password = "password";
 
+//This exactly url of project that actually work 
+//board=1 is board id
 const char *server_name = "https://fdnslaf.000webhostapp.com/esp-outputs-action.php?action=outputs_state&board=1";
 
 const long interval = 5000;
