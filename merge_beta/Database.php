@@ -7,8 +7,8 @@ class Database
     public static function connectDatabase(): mysqli
     {
         self::$connect = new mysqli(
-            'hostname',
-            'usernamw',
+            'host_name',
+            'user_name',
             'password',
             'database_name'
         );
