@@ -76,6 +76,7 @@ class Application extends Database
     {
 
         $sql = "SELECT gpio, state FROM Outputs WHERE board='" . $board . "'";
+
         if ($result = parent::connectDatabase()->query($sql)) {
             self::closeConnection();
             return $result;
@@ -147,6 +148,17 @@ class Application extends Database
         }
         self::closeConnection();
         return "Error: " . $sql . "<br>" . parent::connectDatabase()->error;
+    }
+
+    public static function updateValue($table, ?array $data = [], int $id = null): bool
+    {
+        $args = [];
+        foreach ($data as $key => $value) {
+            $args [] = "$key = '$value'";
+        }
+
+        $sql = "UPDATE $table SET " . implode(',', $args) . " WHERE id = $id";
+        return parent::connectDatabase()->query($sql);
     }
 
     private static function closeConnection(): void

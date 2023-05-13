@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PhpServer.iml" filepath="$PROJECT_DIR$/.idea/PhpServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/merge_beta.iml" filepath="$PROJECT_DIR$/.idea/merge_beta.iml" />
     </modules>
   </component>
 </project>

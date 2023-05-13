@@ -17,16 +17,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Application:: createBoard($board);
         }
         echo $result;
-    } else {
-        echo "No data posted with HTTP POST.";
+    } else if ($action == "update_value") {
+        $name = test_input($_POST["name"]);
+        $board = test_input($_POST["board"]);
+        $gpio = test_input($_POST["gpio"]);
+        $id = test_input($_POST["id"]);
+        $data = [
+            'name' => $name,
+            'board' => $board,
+            'gpio' => $gpio,
+        ];
+
+        Application::updateValue("outputs", $data, $id);
+
     }
+    echo "No data request with post";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $action = test_input($_GET["action"]);
+
     if ($action == "outputs_state") {
         $board = test_input($_GET["board"]);
         $result = Application::getAllOutputStates($board);
+
         if ($result) {
             while ($row = $result->fetch_assoc()) {
                 $rows[$row["gpio"]] = $row["state"];
@@ -37,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if ($result->fetch_assoc()) {
             Application::updateLastBoardTime($board);
         }
+
     } else if ($action == "output_update") {
         $id = test_input($_GET["id"]);
         $state = test_input($_GET["state"]);
