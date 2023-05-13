@@ -8,7 +8,7 @@ const char *password = "password";
 
 //This exactly url of project that actually work 
 //board=1 is board id
-const char *server_name = "https://fdnslaf.000webhostapp.com/esp-outputs-action.php?action=outputs_state&board=1";
+const char *server_name = "https://url.com/esp-outputs-action.php?action=outputs_state&board=1";
 
 const long interval = 5000;
 unsigned long previousMillis = 0;
